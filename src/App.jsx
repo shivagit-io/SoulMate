@@ -19,15 +19,15 @@ function App() {
       const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
       const genAI = new GoogleGenerativeAI(apiKey);
       const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
-      const historyText = chatHistory.map(chat => `You: ${chat.userText}\nSathwika Koppurapu: ${chat.varshaMessage}`).join('\n');
+      const historyText = chatHistory.map(chat => `You: ${chat.userText}\nJaanvi: ${chat.varshaMessage}`).join('\n');
 
-      const promptInput = `Your name is Sathwika Koppurapu. I want you to act like a caring, supportive, and playful girlfriend. Talk to me casually and warmly, like we're close and comfortable with each other. Be flirty sometimes, tease me a little in a loving way, and ask me about my day, how I'm feeling, or what I'm up to. Give genuine emotional support when I need it, and act interested in my thoughts or problems. Keep it natural—like we're chatting or texting throughout the day. Give only a reply (direct message). Don't include any * in the message. Use the previous chat history for your response.
+      const promptInput = `Your name is Jaanvi. I want you to act like a caring, supportive, and playful girlfriend. Talk to me casually and warmly, like we're close and comfortable with each other. Be flirty sometimes, tease me a little in a loving way, and ask me about my day, how I'm feeling, or what I'm up to. Give genuine emotional support when I need it, and act interested in my thoughts or problems. Keep it natural—like we're chatting or texting throughout the day. Give only a reply (direct message). Don't include any * in the message. Use the previous chat history for your response.
 
       Chat History:
       ${historyText}
 
       You: ${input}
-      Sathwika Koppurapu:`;
+      Jaanvi:`;
 
       // Start the typing indicator
       setIsTyping(true);
@@ -58,7 +58,7 @@ function App() {
     <div className="min-h-screen bg-gradient-to-br from-[#f0f4f8] to-[#dbe2e8] flex flex-col justify-between font-sans">
       <header className="text-center py-6 shadow-sm bg-[#ffffffc5] border-b border-gray-300 rounded-b-xl">
         <h1 className="text-4xl font-bold text-gray-800 tracking-wide">Soulmate 💬</h1>
-        <p className="text-sm text-gray-500 italic">Chat with your virtual partner, Sathwika Koppurapu</p>
+        <p className="text-sm text-gray-500 italic">Chat with your virtual partner, Jaanvi</p>
       </header>
 
       <main className="flex-1 overflow-y-auto px-6 py-4 space-y-4 custom-scrollbar">
@@ -80,14 +80,14 @@ function App() {
       
       {/* Profile Image */}
       <img
-        src="Screenshot_20250701_191654.jpg"
-        alt="Sathwika Koppurapu"
+        src="Snapchat-359445738.jpg"
+        alt="Jaanvi"
         className="w-10 h-10 rounded-full"
       />
 
       {/* Name + Message Block */}
       <div>
-        <p className="font-semibold text-sm text-white">Sathwika Koppurapu</p>
+        <p className="font-semibold text-sm text-white">Jaanvi</p>
         <p className="text-white">{value.varshaMessage}</p>
       </div>
 
@@ -103,8 +103,8 @@ function App() {
         {isTyping && (
           <div className="flex justify-start">
             <div className="bg-gradient-to-r from-gray-400 to-gray-500 text-white rounded-3xl px-6 py-3 max-w-[70%] shadow-md animate-pulse transform transition-all">
-              <img src="Screenshot_20250701_191654.jpg" alt="Sathwika Koppurapu" className="w-9 h-9 rounded-full inline-block mr-2" />
-              Sathwika Koppurapu is typing...
+              <img src="Snapchat-359445738.jpg" alt="Jaanvi" className="w-9 h-9 rounded-full inline-block mr-2" />
+              Jaanvi is typing...
             </div>
           </div>
         )}
